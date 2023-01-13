@@ -1,0 +1,25 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main() 
+{
+	int status;
+	char fileName[20];
+	cout << "Enter file name, what need to remove: ";
+	cin >> fileName;
+	status = remove(fileName);
+	
+	if (status == 0)
+	{
+		cout << "\n File deleted Succesfully";
+	}
+
+
+	else
+
+	{
+		cout << "\nError occurred";
+	}
+	cout << endl;
+	return 0;
+}
