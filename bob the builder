@@ -1,0 +1,75 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+void funkc1()
+{
+	int choice2;
+	do
+	{
+		cout << endl
+			<< "1 - Iemaksat naudu\n"
+			<< "2 - Iznemt naudu\n";
+		cin >> choice2;
+		switch (choice2)
+		{
+		case 1:
+			break;
+		case 2:
+			break;
+		}
+
+	} while (choice2 != 2);
+}
+
+int main()
+{
+	int choice;
+	ofstream fout;
+	fout.open("money.txt");
+
+	ofstream asd;
+	asd.open("PIN.txt");
+	do
+	{
+
+
+		cout << endl
+			<< " 1 - Skaidras naudas iemaksa un iznemsana EUR valuta\n"
+			<< " 2 - Parbaudit un izdrukat kartes konta atlikumu\n"
+			<< " 4 - Mainit kartes PIN kodu bez maksas\n"
+			<< " 5 - Bez maksas qtblokiet kartes PIN kodu, ja PIN kods tika blokets, veicot pirkumu tirdzniecibas vieta\n"
+			<< " 6 - Apmaksat rekinus par sniegtajiem pakalpojumiem–rekinu apmaksa, ka ari ziro maksajumu pieniemsana bez papildus komisijas maksas\n"
+			<< " Enter your choice and press return: ";
+		cin >> choice;
+
+		switch (choice)
+		{
+			case 1:
+				funkc1();
+				break;
+			case 2:
+				//code to make score for this game to count how many times u win the game
+				break;
+			case 3:
+				//code to make option for the game
+				break;
+			case 4:
+				//code to help the user like give him
+				//extra information about the mode and the controller
+				break;
+			case 5:
+				cout << "End of Program.\n";
+				break;
+			case 6:
+				
+				break;
+			default:
+				cout << "Not a Valid Choice. \n"
+					<< "Choose again.\n";
+				break;
+		}
+	} 
+	while (choice != 6);
+	return 0;
+}
+
