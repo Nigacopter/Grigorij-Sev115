@@ -20,6 +20,25 @@ void funkc1()
 
 	} while (choice2 != 2);
 }
+void funkc2()
+{
+	int choice3;
+	cout << endl
+			<< "1 - Parbaudit naudas atlikumu\n"
+			<< "2 - Izdrukat naudas atlikumu\n";
+		cin >> choice3;
+		switch (choice3)
+		{
+		case 1:
+			break;
+		case 2:
+			break;
+
+		}
+
+
+
+}
 
 int main()
 {
@@ -36,40 +55,38 @@ int main()
 		cout << endl
 			<< " 1 - Skaidras naudas iemaksa un iznemsana EUR valuta\n"
 			<< " 2 - Parbaudit un izdrukat kartes konta atlikumu\n"
-			<< " 4 - Mainit kartes PIN kodu bez maksas\n"
-			<< " 5 - Bez maksas qtblokiet kartes PIN kodu, ja PIN kods tika blokets, veicot pirkumu tirdzniecibas vieta\n"
-			<< " 6 - Apmaksat rekinus par sniegtajiem pakalpojumiem–rekinu apmaksa, ka ari ziro maksajumu pieniemsana bez papildus komisijas maksas\n"
+			<< " 3 - Mainit kartes PIN kodu bez maksas\n"
+			<< " 4 - Bez maksas atblokiet kartes PIN kodu, ja PIN kods tika blokets, veicot pirkumu tirdzniecibas vieta\n"
+			<< " 5 - Apmaksat rekinus par sniegtajiem pakalpojumiem–rekinu apmaksa, ka ari ziro maksajumu pieniemsana bez papildus komisijas maksas\n"
 			<< " Enter your choice and press return: ";
 		cin >> choice;
 
 		switch (choice)
 		{
-			case 1:
-				funkc1();
-				break;
-			case 2:
-				//code to make score for this game to count how many times u win the game
-				break;
-			case 3:
-				//code to make option for the game
-				break;
-			case 4:
-				//code to help the user like give him
-				//extra information about the mode and the controller
-				break;
-			case 5:
-				cout << "End of Program.\n";
-				break;
-			case 6:
-				
-				break;
-			default:
-				cout << "Not a Valid Choice. \n"
-					<< "Choose again.\n";
-				break;
+		case 1:
+			funkc1();
+			break;
+		case 2:
+			funkc2();
+			break;
+		case 3:
+			//code to make option for the game
+			break;
+		case 4:
+			//code to help the user like give him
+			//extra information about the mode and the controller
+			break;
+		case 5:
+			
+			break;
+		case 6:
+			cout << "End of Program.\n";
+			break;
+		default:
+			cout << "Not a Valid Choice. \n"
+				<< "Choose again.\n";
+			break;
 		}
-	} 
-	while (choice != 6);
+	} while (choice != 6);
 	return 0;
 }
-
