@@ -4,8 +4,7 @@ using namespace std;
 void funkc1()
 {
 	int choice2;
-	do
-	{
+	
 		cout << endl
 			<< "1 - Iemaksat naudu\n"
 			<< "2 - Iznemt naudu\n";
@@ -18,23 +17,23 @@ void funkc1()
 			break;
 		}
 
-	} while (choice2 != 2);
+	
 }
 void funkc2()
 {
 	int choice3;
 	cout << endl
-			<< "1 - Parbaudit naudas atlikumu\n"
-			<< "2 - Izdrukat naudas atlikumu\n";
-		cin >> choice3;
-		switch (choice3)
-		{
-		case 1:
-			break;
-		case 2:
-			break;
+		<< "1 - Parbaudit naudas atlikumu\n"
+		<< "2 - Izdrukat naudas atlikumu\n";
+	cin >> choice3;
+	switch (choice3)
+	{
+	case 1:
+		break;
+	case 2:
+		break;
 
-		}
+	}
 
 
 
@@ -45,9 +44,8 @@ int main()
 	int choice;
 	ofstream fout;
 	fout.open("money.txt");
-
 	ofstream asd;
-	asd.open("PIN.txt");
+	string i = 0;
 	do
 	{
 
@@ -57,7 +55,7 @@ int main()
 			<< " 2 - Parbaudit un izdrukat kartes konta atlikumu\n"
 			<< " 3 - Mainit kartes PIN kodu bez maksas\n"
 			<< " 4 - Bez maksas atblokiet kartes PIN kodu, ja PIN kods tika blokets, veicot pirkumu tirdzniecibas vieta\n"
-			<< " 5 - Apmaksat rekinus par sniegtajiem pakalpojumiem–rekinu apmaksa, ka ari ziro maksajumu pieniemsana bez papildus komisijas maksas\n"
+			<< " 5 - Pabeigt darbibas\n"
 			<< " Enter your choice and press return: ";
 		cin >> choice;
 
@@ -70,16 +68,13 @@ int main()
 			funkc2();
 			break;
 		case 3:
-			//code to make option for the game
+			//txt
 			break;
 		case 4:
-			//code to help the user like give him
-			//extra information about the mode and the controller
+			
+			asd.open("PIN.txt");
 			break;
 		case 5:
-			
-			break;
-		case 6:
 			cout << "End of Program.\n";
 			break;
 		default:
@@ -87,6 +82,6 @@ int main()
 				<< "Choose again.\n";
 			break;
 		}
-	} while (choice != 6);
+	} while (choice != 5);
 	return 0;
 }
