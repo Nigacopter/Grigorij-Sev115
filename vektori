@@ -1,0 +1,15 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    
+    vector<string> countries = { "USA", "Canada", "Mexico", "Japan", "China" };
+    countries.pop_back();
+    string last_country = "Japan";
+    countries.push_back(last_country);
+    cout << "Last country: " << countries.back() << endl;
+    cout << "First country: " << countries.front() << endl;
+
+    return 0;
+}
