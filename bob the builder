@@ -10,12 +10,17 @@ bool isNumber(const string& s)
 	}
 	return true;
 }
-int funkc1(int summa = 10000, int pilnsumma)
+int funkc1(/*int summa*/)
 {
-	int choice2; bool a = false;
+	int choice2;
+	bool a = false;
 	string piev;
-	int noniem; int piev2;
-	
+	string noniem;
+	int noniem2;
+	int piev2;
+	int summa = 100;
+	ofstream dengi;
+	dengi.open("money.txt", ios::ate);
 	cout << endl
 		<< "1 - Iemaksat naudu\n"
 		<< "2 - Iznemt naudu\n"
@@ -25,21 +30,34 @@ int funkc1(int summa = 10000, int pilnsumma)
 	{
 	case 1:
 		cout << "Ievadiet summu kuru jus gribat ielikt:";
-		
+
 		do {
 			cin >> piev;
 			if (isNumber(piev) == false) {
 				cout << "Ievadiet summu ar skaitliem:";
 			}
-			else a = true;
+			else {
+				a = true;	piev2 = stoi(piev);
+				summa = summa + piev2;
+				dengi << summa << endl;
+			}
 		} while (a == false);
-		piev2 = stoi(piev);
-		pilnsumma = summa + piev2;
-		return summa + piev2;
+
+
 		break;
 	case 2:
 		cout << "Ievadiet summu kuru jus gribat izniemt:";
-		cin >> noniem;
+		do {
+			cin >> noniem;
+			if (isNumber(noniem) == false) {
+				cout << "Ievadiet summu ar skaitliem:";
+			}
+			else a = true;
+		} while (a == false);
+		noniem2 = stoi(noniem);
+		summa = summa - noniem2;
+		dengi << summa << endl;
+		return summa - noniem2;
 		break;
 	}
 
@@ -69,14 +87,13 @@ void funkc2()
 
 int main(int piev2)
 {
-	int summa = 10000;
+	//int summa;
 	int choice;
-	ofstream dengi;
-	dengi.open("money.txt");
+
 	ofstream asd;
 	asd.open("PIN.txt");
 	int pin = 0000;
-	int pilnsumma;
+
 	do
 	{
 
@@ -92,7 +109,9 @@ int main(int piev2)
 		switch (choice)
 		{
 		case 1:
-			funkc1();
+
+			funkc1(/*summa*/);
+
 			break;
 		case 2:
 			funkc2();
@@ -108,7 +127,7 @@ int main(int piev2)
 			cout << "Not a Valid Choice. \n" << "Choose again.\n";
 			break;
 		}
-		
+
 	} while (choice != 5);
 	return 0;
 }
